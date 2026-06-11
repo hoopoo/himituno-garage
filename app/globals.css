@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #14121a;
+  --surface: #1e1b26;
+  --border: #3d3548;
+  --text: #f5f0ea;
+  --muted: #a89bb0;
+  --accent: #e8a0bf;
+  --accent-soft: #f4d4e3;
+  --warn-bg: #2a2218;
+  --warn-border: #8a6a3a;
+  --warn-text: #f0dcc0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
