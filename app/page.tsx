@@ -13,6 +13,9 @@ export default function Home() {
         <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[var(--text)] sm:text-lg">
           子どもの発見を、観察・言葉・制作につなげる小さなAI実験
         </p>
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[var(--muted)] sm:text-base">
+          これは、正解を急がず、子どもの「なんか変」「好き」「作りたい」をいったん受け止めるための車庫です。
+        </p>
       </header>
 
       <aside
