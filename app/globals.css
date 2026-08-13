@@ -11,10 +11,60 @@
   --warn-bg: #2a2218;
   --warn-border: #8a6a3a;
   --warn-text: #f0dcc0;
+  --ny-accent: #9ec8ff;
+  --ny-muted: #7a8aa8;
+  --ny-border: #3a4a68;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+.ny-page {
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(158, 200, 255, 0.08), transparent 60%),
+    var(--bg);
+}
+
+.ny-hero {
+  color: var(--ny-accent);
+  letter-spacing: 0.06em;
+}
+
+.ny-cta {
+  display: inline-block;
+  border-radius: 0.75rem;
+  background: var(--ny-accent);
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0d1520;
+}
+
+.ny-cta:hover {
+  opacity: 0.9;
+}
+
+.ny-cta-secondary {
+  display: inline-block;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.ny-cta-secondary:hover {
+  border-color: var(--ny-accent);
+  color: var(--ny-accent);
+}
+
+.ny-jobs {
+  background: linear-gradient(180deg, rgba(158, 200, 255, 0.08), rgba(20, 18, 26, 0.4));
+}
+
+.ny-job-name {
+  color: var(--accent-soft);
 }

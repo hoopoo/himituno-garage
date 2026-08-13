@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Chat from "./components/Chat";
 
 export default function Home() {
@@ -24,6 +25,12 @@ export default function Home() {
       >
         これは子どもだけで使わせる完成サービスではありません。保護者・先生が見守る前提の実験版です。宿題の答えは出しません。個人情報は入力しないでください。
       </aside>
+
+      <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-[var(--muted)]">
+        <Link href="/not-yet" className="text-[var(--ny-accent)] underline-offset-4 hover:underline">
+          NOT YET — まだ名前のない仕事を探そう
+        </Link>
+      </p>
 
       <Chat />
 
