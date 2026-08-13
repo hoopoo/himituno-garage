@@ -45,12 +45,9 @@ export default function NotYetResults({ result, onRetry }: Props) {
           </p>
         )}
         {result.signals.items.length > 0 && (
-          <ul className="mt-5 flex flex-wrap gap-2">
+          <ul className="mt-5 space-y-2">
             {result.signals.items.map((item) => (
-              <li
-                key={item}
-                className="rounded-full border border-[var(--border)] px-3 py-1.5 text-sm text-[var(--accent-soft)]"
-              >
+              <li key={item} className="text-sm leading-relaxed text-[var(--accent-soft)]">
                 {item}
               </li>
             ))}
@@ -63,18 +60,23 @@ export default function NotYetResults({ result, onRetry }: Props) {
           02 POSSIBLE WORLDS
         </p>
         <h2 className="mt-2 text-xl font-medium sm:text-2xl">
-          そこからつながる、いまある仕事
+          そこからつながる、いまある世界
         </h2>
         <div className="mt-6 space-y-4">
           {result.possibleWorlds.map((w) => (
             <article
-              key={w.name}
+              key={w.world}
               className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-4"
             >
-              <h3 className="text-base font-medium text-[var(--text)]">{w.name}</h3>
+              <h3 className="text-base font-medium text-[var(--text)]">{w.world}</h3>
               <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
                 {w.description}
               </p>
+              {w.examples?.length > 0 && (
+                <p className="mt-2 text-xs leading-relaxed text-[var(--muted)]">
+                  いまある例：{w.examples.join(" · ")}
+                </p>
+              )}
               {w.connection && (
                 <p className="mt-3 text-sm leading-relaxed text-[var(--ny-accent)]">
                   {w.connection}
@@ -100,11 +102,11 @@ export default function NotYetResults({ result, onRetry }: Props) {
                 {job.name}
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-[var(--text)] sm:text-base">
-                {job.description}
+                {job.whatTheyDo}
               </p>
-              {job.whyItConnects && (
+              {job.whyItMightExist && (
                 <p className="mt-3 text-sm leading-relaxed text-[var(--ny-accent)]">
-                  {job.whyItConnects}
+                  {job.whyItMightExist}
                 </p>
               )}
             </article>

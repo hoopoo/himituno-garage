@@ -7,7 +7,8 @@
     "build": "node scripts/sync-prompt.mjs && next build",
     "start": "next start",
     "lint": "eslint",
-    "sync-prompt": "node scripts/sync-prompt.mjs"
+    "sync-prompt": "node scripts/sync-prompt.mjs",
+    "test:not-yet": "node scripts/test-not-yet-quality.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

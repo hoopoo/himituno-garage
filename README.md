@@ -1,6 +1,6 @@
 # ひみつの車庫 — Vercel Preview
 
-Web 版プレビュー（まぎれこみ車掌 v0.7.3 + NOT YET v0.1）
+Web 版プレビュー（まぎれこみ車掌 v0.7.3 + NOT YET v0.2）
 
 ## Concept
 
@@ -39,14 +39,19 @@ web/
 | `/` | まぎれこみ車掌 |
 | `/not-yet` | NOT YET — まだ名前のない仕事を探そう |
 
-## AI generation flow（NOT YET）
+## AI generation flow（NOT YET v0.2）
 
 1. Landing → 「はじめる」
 2. 7問を1問ずつ（session state のみ）
 3. `POST /api/not-yet` に回答を送信
 4. Safety check → 問題があれば停車メッセージのみ
-5. OpenAI が JSON schema で生成
-6. Results: Signals / Possible Worlds / Not-yet-named Jobs / Try this week
+5. OpenAI が JSON schema で生成（inferred signals / 領域 / 再結合した未来役割）
+6. 品質セルフチェック → 未達なら **1回だけ** 再生成
+7. Results: Signals / Possible Worlds / Not-yet-named Jobs / Try this week
+
+Anti-literal: 入力名詞を「○○技術者」に直結しない。最低2つの signal を再結合する。
+
+テスト: `npm run test:not-yet`
 
 ## Safety principles
 
@@ -60,7 +65,7 @@ web/
 - v0.1 は DB / アカウント / 永続メモリなし
 - 回答はブラウザの React state のみ（リロードで消える）
 
-## v0.1 limitations
+## v0.1 / v0.2 limitations
 
 実装しない: アカウント、永続メモリ、Supabase、SNS共有、ランキング、職業DB、保護者ダッシュボード、PDF、過去比較
 
